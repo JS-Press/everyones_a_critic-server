@@ -62,12 +62,12 @@ class ApplicationController < Sinatra::Base
   #   art.to_json
   # end
 
-  # # delete crits
-  # delete "/interpretations/:id" do 
-  #   crit = Interpretation.find(params[:id])
-  #   crit.destroy
-  #   crit.to_json
-  # end
+  # delete crits
+  delete "/interpretations/:id" do 
+    crit = Interpretation.find(params[:id])
+    crit.destroy
+    crit.to_json
+  end
 
 
   ### UPDATE
@@ -78,7 +78,6 @@ class ApplicationController < Sinatra::Base
     crit.update(
       like_count: params[:like_count]
     )
-    crit.save
     crit.to_json
   end
 
